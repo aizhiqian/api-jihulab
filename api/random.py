@@ -10,8 +10,8 @@ import redis
 #每IP每24小时最大请求链接数（需要在环境变量配置Redis信息）
 maxNum = 0
 #速率限制：每IP每limitTime秒可以请求limitFrequency次API
-limitTime = 5
-limitFrequency = 3
+limitTime = 0
+limitFrequency = 0
 
 if maxNum > 0 and environ.get("REDIS_HOST", False) and environ.get("REDIS_PORT", False) and environ.get("REDIS_PWD", False):
     connection = redis.ConnectionPool(
